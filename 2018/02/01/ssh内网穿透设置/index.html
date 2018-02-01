@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>不忘 做个快乐的人 | icodebug</title>
+  <title>ssh内网穿透,ssh隧道代理上网 | icodebug</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每个人都有条自己要走的路
-因为赶路，必经辛苦
-在途中">
+  <meta name="description" content="实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目
+前提有一台外网服务器,有自己的域名更好">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不忘 做个快乐的人">
-<meta property="og:url" content="http://blog.icodebug.com/2016/03/24/不忘-做个快乐的人/index.html">
+<meta property="og:title" content="ssh内网穿透,ssh隧道代理上网">
+<meta property="og:url" content="http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/index.html">
 <meta property="og:site_name" content="icodebug">
-<meta property="og:description" content="每个人都有条自己要走的路
-因为赶路，必经辛苦
-在途中">
-<meta property="og:updated_time" content="2016-03-24T08:39:44.794Z">
+<meta property="og:description" content="实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目
+前提有一台外网服务器,有自己的域名更好">
+<meta property="og:updated_time" content="2018-02-01T10:01:51.190Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不忘 做个快乐的人">
-<meta name="twitter:description" content="每个人都有条自己要走的路
-因为赶路，必经辛苦
-在途中">
+<meta name="twitter:title" content="ssh内网穿透,ssh隧道代理上网">
+<meta name="twitter:description" content="实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目
+前提有一台外网服务器,有自己的域名更好">
   
   
     <link rel="icon" href="/favicon.png">
@@ -215,11 +212,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-不忘-做个快乐的人" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ssh内网穿透设置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/24/不忘-做个快乐的人/" class="article-date">
-      <time datetime="2016-03-24T08:23:22.000Z" itemprop="datePublished">2016-03-24</time>
+      <a href="/2018/02/01/ssh内网穿透设置/" class="article-date">
+      <time datetime="2018-02-01T10:25:36.000Z" itemprop="datePublished">2018-02-01</time>
 </a>
     </div>
   
@@ -232,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      不忘 做个快乐的人
+      ssh内网穿透,ssh隧道代理上网
     </h1>
   
 
@@ -243,7 +240,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aa/">aa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bb/">bb</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -255,19 +252,27 @@
           
         <p><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
 <ul>
-<li>每个人都有条自己要走的路</li>
-<li>因为赶路，必经辛苦</li>
-<li>在途中<br><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
-<contents>
-
-</contents></the></li>
+<li>实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目</li>
+<li>前提有一台外网服务器,有自己的域名更好<br><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
+</the></li>
 </ul>
-<p>每个人都有条自己要走的路</p>
-<p>因为赶路，必经辛苦</p>
-<p>在途中</p>
-<p>苦 是我们生活当中的常态</p>
-<p>尽管这样，也不忘，我们要做个快乐的人</p>
-<p>快乐才是我们上路的初衷</p>
+<h2 id="废话连篇代码讲解："><a href="#废话连篇代码讲解：" class="headerlink" title="废话连篇代码讲解："></a>废话连篇代码讲解：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -gfnNTR x.x.x.x:5000:y.y.y.y:22 root@z.z.z.z -o ServerAliveInterval=300</span><br></pre></td></tr></table></figure>
+<p>看下上面代码的几个参数含义<br>x.x.x.x 可以是你公网服务器的IP，也可以是127.0.0.1、再或者localhost代替。<br>5000 表示你公网服务器暴露的端口，只要访问这个端口，都会转发给你的内网设备。<br>y.y.y.y是你需要做内网穿透设备的IP，也可以是127.0.0.1、再或者localhost代替。<br>22 内网服务器暴露的端口，所有访问公网暴露的端口都会转发到此处。<br>root 表示你的公网服务器中的root账户。<br>z.z.z.z是公网服务器的静态IP，这里要注意了：如果你的公网IP做了域名映射，可以直接是root@xxx.com。如果没有就直接是root@z.z.z.z。 </p>
+<h2 id="正儿八经的实验"><a href="#正儿八经的实验" class="headerlink" title="正儿八经的实验"></a>正儿八经的实验</h2><p>首先要在公网服务器做如下配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
+<p>在最后一行添加 GatewayPorts yes  保存退出<br>执行重启ssh服务命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure></p>
+<p>然后在内网服务器执行下面命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -gfnNTR 123.45.56.78:5000:localhost:22 root@123.45.56.78 -o ServerAliveInterval=300</span><br></pre></td></tr></table></figure></p>
+<p>回车输入你服务器登录密码即可完成内网穿透<br>验证是否成功的方法，找另外一台电脑输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 内网主机用户名@123.45.56.78 -p 5000</span><br></pre></td></tr></table></figure></p>
+<p>回车输入内网主机登录密码即可</p>
+<h2 id="内网穿透-域名映射"><a href="#内网穿透-域名映射" class="headerlink" title="内网穿透 域名映射"></a>内网穿透 域名映射</h2><p>举个栗子:现有内网项目端口8080，域名my.abc.com 要求通过域名可以访问内网8080端口的项目，上代码！内网要映射项目的机器执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -gfnNTR localhost:50001:localhost:8080 root@123.45.56.78 -o ServerAliveInterval=300</span><br></pre></td></tr></table></figure></p>
+<p>域名：my.abc.com  映射到公网ip 123.45.56.78<br>公网服务器配置nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name my-nginx -p 80:80 -v /home/nginx/conf.d:/etc/nginx/conf.d -d nginx</span><br></pre></td></tr></table></figure></p>
+<p>my-nginx 容器名字<br>/home/nginx/conf.d 宿主机的nginx配置文件存放目录自行更改</p>
+<p>在/home/nginx/conf.d  文件夹下创建文件：abc.conf  内容如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## set web-application proxy</span></span><br><span class="line">	upstream my.abc.com&#123;</span><br><span class="line">		ip_hash;</span><br><span class="line">		server localhost:<span class="number">50001</span> max_fails=<span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	server&#123;</span><br><span class="line">		listen <span class="number">80</span>;</span><br><span class="line">		server_name my.abc.com.com;</span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass http://my.abc.com.com;</span><br><span class="line">			index index.html,index.jsp;</span><br><span class="line">			<span class="comment">#proxy settings</span></span><br><span class="line">			proxy_redirect default;</span><br><span class="line">			proxy_set_header Host $host;</span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;</span><br><span class="line">			proxy_connect_timeout      <span class="number">900</span>;</span><br><span class="line">			proxy_send_timeout         <span class="number">900</span>;</span><br><span class="line">			proxy_read_timeout         <span class="number">900</span>;</span><br><span class="line">			proxy_buffer_size          <span class="number">64</span>k;</span><br><span class="line">			proxy_buffers              <span class="number">4</span> <span class="number">32</span>k;</span><br><span class="line">			proxy_busy_buffers_size    <span class="number">64</span>k;</span><br><span class="line">			proxy_temp_file_write_size <span class="number">64</span>k;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>重启nginx服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart my-nginx</span><br></pre></td></tr></table></figure></p>
+<p>访问域名测试收工。</p>
+<h2 id="ssh隧道代理上网"><a href="#ssh隧道代理上网" class="headerlink" title="ssh隧道代理上网"></a>ssh隧道代理上网</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -qTNf -D 127.0.0.1:12345 root@x.x.x.x</span><br></pre></td></tr></table></figure>
+<p>x.x.x.x 代表公网ip<br>-q表示该命令进入安静模式<br>-T是指该命令不占用shell<br>-N是指该命令不执行远程命令<br>-f是指该命令在后台运行<br>-D是该命令重要参数，他的后面跟着socks5服务器的地址与端口</p>
+<p>本机配置代理127.0.0.1  端口：12345  就可以了。。。谷歌浏览器推荐使用插件：proxy-switchyomega</p>
 
       
     </div>
@@ -276,13 +281,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/24/不忘-做个快乐的人/">不忘 做个快乐的人</a></p>
+        <p><span>本文标题:</span><a href="/2018/02/01/ssh内网穿透设置/">ssh内网穿透,ssh隧道代理上网</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">贱不死的小强</a></p>
-        <p><span>发布时间:</span>2016-03-24, 16:23:22</p>
-        <p><span>最后更新:</span>2016-03-24, 16:39:44</p>
+        <p><span>发布时间:</span>2018-02-01, 18:25:36</p>
+        <p><span>最后更新:</span>2018-02-01, 18:01:51</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/24/不忘-做个快乐的人/" title="不忘 做个快乐的人">http://blog.icodebug.com/2016/03/24/不忘-做个快乐的人/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2016/03/24/不忘-做个快乐的人/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/02/01/ssh内网穿透设置/" title="ssh内网穿透,ssh隧道代理上网">http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -295,12 +300,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/25/git-出错-fatal-Could-not-read-from-remote-repository-Please-make-sure-you-have-the-co/">
-                    git 出错 fatal: Could not read from remote repository.Please make sure you have the co...
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/10/25/阿里巴巴Java开发规约插件使用/">
+                    阿里巴巴Java开发规约插件使用
                 </a>
             </div>
-        
         
     </nav>
 
@@ -309,7 +314,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#废话连篇代码讲解："><span class="toc-number">1.</span> <span class="toc-text">废话连篇代码讲解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正儿八经的实验"><span class="toc-number">2.</span> <span class="toc-text">正儿八经的实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内网穿透-域名映射"><span class="toc-number">3.</span> <span class="toc-text">内网穿透 域名映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh隧道代理上网"><span class="toc-number">4.</span> <span class="toc-text">ssh隧道代理上网</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -371,7 +376,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/24/不忘-做个快乐的人/" data-title="不忘 做个快乐的人" data-url="http://blog.icodebug.com/2016/03/24/不忘-做个快乐的人/"></div>
+    <div class="ds-thread" data-thread-key="2018/02/01/ssh内网穿透设置/" data-title="ssh内网穿透,ssh隧道代理上网" data-url="http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -395,15 +400,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/25/git-出错-fatal-Could-not-read-from-remote-repository-Please-make-sure-you-have-the-co/" title="上一篇: git 出错 fatal: Could not read from remote repository.Please make sure you have the co...">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/10/25/阿里巴巴Java开发规约插件使用/" title="下一篇: 阿里巴巴Java开发规约插件使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
