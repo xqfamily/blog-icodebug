@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ssh内网穿透,ssh隧道代理上网 | icodebug</title>
+  <title>Spring常用注解（收藏大全） | icodebug</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目
-前提有一台外网服务器,有自己的域名更好">
+  <meta name="description" content="常用的Spring注解收藏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssh内网穿透,ssh隧道代理上网">
-<meta property="og:url" content="http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/index.html">
+<meta property="og:title" content="Spring常用注解（收藏大全）">
+<meta property="og:url" content="http://blog.icodebug.com/2018/08/15/Spring常用注解（收藏大全）/index.html">
 <meta property="og:site_name" content="icodebug">
-<meta property="og:description" content="实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目
-前提有一台外网服务器,有自己的域名更好">
-<meta property="og:updated_time" content="2018-02-01T10:01:51.190Z">
+<meta property="og:description" content="常用的Spring注解收藏">
+<meta property="og:updated_time" content="2018-08-17T06:21:26.982Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh内网穿透,ssh隧道代理上网">
-<meta name="twitter:description" content="实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目
-前提有一台外网服务器,有自己的域名更好">
+<meta name="twitter:title" content="Spring常用注解（收藏大全）">
+<meta name="twitter:description" content="常用的Spring注解收藏">
   
   
     <link rel="icon" href="/favicon.png">
@@ -212,11 +209,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ssh内网穿透设置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Spring常用注解（收藏大全）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/02/01/ssh内网穿透设置/" class="article-date">
-      <time datetime="2018-02-01T10:25:36.000Z" itemprop="datePublished">2018-02-01</time>
+      <a href="/2018/08/15/Spring常用注解（收藏大全）/" class="article-date">
+      <time datetime="2018-08-15T09:41:06.000Z" itemprop="datePublished">2018-08-15</time>
 </a>
     </div>
   
@@ -229,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ssh内网穿透,ssh隧道代理上网
+      Spring常用注解（收藏大全）
     </h1>
   
 
@@ -239,10 +236,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -252,27 +245,75 @@
           
         <p><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
 <ul>
-<li>实现可以通过外网访问内网内某一台电脑，可以通过域名访问某个内网的项目</li>
-<li>前提有一台外网服务器,有自己的域名更好<br><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
+<li></li>
+<li>常用的Spring注解收藏</li>
+<li><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
 </the></li>
 </ul>
-<h2 id="废话连篇代码讲解："><a href="#废话连篇代码讲解：" class="headerlink" title="废话连篇代码讲解："></a>废话连篇代码讲解：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -gfnNTR x.x.x.x:5000:y.y.y.y:22 root@z.z.z.z -o ServerAliveInterval=300</span><br></pre></td></tr></table></figure>
-<p>看下上面代码的几个参数含义<br>x.x.x.x 可以是你公网服务器的IP，也可以是127.0.0.1、再或者localhost代替。<br>5000 表示你公网服务器暴露的端口，只要访问这个端口，都会转发给你的内网设备。<br>y.y.y.y是你需要做内网穿透设备的IP，也可以是127.0.0.1、再或者localhost代替。<br>22 内网服务器暴露的端口，所有访问公网暴露的端口都会转发到此处。<br>root 表示你的公网服务器中的root账户。<br>z.z.z.z是公网服务器的静态IP，这里要注意了：如果你的公网IP做了域名映射，可以直接是root@xxx.com。如果没有就直接是root@z.z.z.z。 </p>
-<h2 id="正儿八经的实验"><a href="#正儿八经的实验" class="headerlink" title="正儿八经的实验"></a>正儿八经的实验</h2><p>首先要在公网服务器做如下配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
-<p>在最后一行添加 GatewayPorts yes  保存退出<br>执行重启ssh服务命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure></p>
-<p>然后在内网服务器执行下面命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -gfnNTR 123.45.56.78:5000:localhost:22 root@123.45.56.78 -o ServerAliveInterval=300</span><br></pre></td></tr></table></figure></p>
-<p>回车输入你服务器登录密码即可完成内网穿透<br>验证是否成功的方法，找另外一台电脑输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 内网主机用户名@123.45.56.78 -p 5000</span><br></pre></td></tr></table></figure></p>
-<p>回车输入内网主机登录密码即可</p>
-<h2 id="内网穿透-域名映射"><a href="#内网穿透-域名映射" class="headerlink" title="内网穿透 域名映射"></a>内网穿透 域名映射</h2><p>举个栗子:现有内网项目端口8080，域名my.abc.com 要求通过域名可以访问内网8080端口的项目，上代码！内网要映射项目的机器执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -gfnNTR localhost:50001:localhost:8080 root@123.45.56.78 -o ServerAliveInterval=300</span><br></pre></td></tr></table></figure></p>
-<p>域名：my.abc.com  映射到公网ip 123.45.56.78<br>公网服务器配置nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name my-nginx -p 80:80 -v /home/nginx/conf.d:/etc/nginx/conf.d -d nginx</span><br></pre></td></tr></table></figure></p>
-<p>my-nginx 容器名字<br>/home/nginx/conf.d 宿主机的nginx配置文件存放目录自行更改</p>
-<p>在/home/nginx/conf.d  文件夹下创建文件：abc.conf  内容如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## set web-application proxy</span></span><br><span class="line">	upstream my.abc.com&#123;</span><br><span class="line">		ip_hash;</span><br><span class="line">		server localhost:<span class="number">50001</span> max_fails=<span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	server&#123;</span><br><span class="line">		listen <span class="number">80</span>;</span><br><span class="line">		server_name my.abc.com.com;</span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass http://my.abc.com.com;</span><br><span class="line">			index index.html,index.jsp;</span><br><span class="line">			<span class="comment">#proxy settings</span></span><br><span class="line">			proxy_redirect default;</span><br><span class="line">			proxy_set_header Host $host;</span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;</span><br><span class="line">			proxy_connect_timeout      <span class="number">900</span>;</span><br><span class="line">			proxy_send_timeout         <span class="number">900</span>;</span><br><span class="line">			proxy_read_timeout         <span class="number">900</span>;</span><br><span class="line">			proxy_buffer_size          <span class="number">64</span>k;</span><br><span class="line">			proxy_buffers              <span class="number">4</span> <span class="number">32</span>k;</span><br><span class="line">			proxy_busy_buffers_size    <span class="number">64</span>k;</span><br><span class="line">			proxy_temp_file_write_size <span class="number">64</span>k;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>重启nginx服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart my-nginx</span><br></pre></td></tr></table></figure></p>
-<p>访问域名测试收工。</p>
-<h2 id="ssh隧道代理上网"><a href="#ssh隧道代理上网" class="headerlink" title="ssh隧道代理上网"></a>ssh隧道代理上网</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -qTNf -D 127.0.0.1:12345 root@x.x.x.x</span><br></pre></td></tr></table></figure>
-<p>x.x.x.x 代表公网ip<br>-q表示该命令进入安静模式<br>-T是指该命令不占用shell<br>-N是指该命令不执行远程命令<br>-f是指该命令在后台运行<br>-D是该命令重要参数，他的后面跟着socks5服务器的地址与端口</p>
-<p>本机配置代理127.0.0.1  端口：12345  就可以了。。。谷歌浏览器推荐使用插件：proxy-switchyomega</p>
+<h2 id="Spring部分"><a href="#Spring部分" class="headerlink" title="Spring部分"></a>Spring部分</h2><h4 id="1-声明bean的注解"><a href="#1-声明bean的注解" class="headerlink" title="1.声明bean的注解"></a>1.声明bean的注解</h4><p><code>@Component</code> 组件，没有明确的角色</p>
+<p><code>@Service</code> 在业务逻辑层使用（service层）</p>
+<p><code>@Repository</code> 在数据访问层使用（dao层）</p>
+<p><code>@Controller</code> 在展现层使用，控制器的声明（C）</p>
+<h4 id="2-注入bean的注解"><a href="#2-注入bean的注解" class="headerlink" title="2.注入bean的注解"></a>2.注入bean的注解</h4><p><code>@Autowired</code>：由Spring提供</p>
+<p><code>@Inject</code>：由JSR-330提供</p>
+<p><code>@Resource</code>：由JSR-250提供</p>
+<p>都可以注解在set方法和属性上，推荐注解在属性上（一目了然，少写代码）。</p>
+<h4 id="3-java配置类相关注解"><a href="#3-java配置类相关注解" class="headerlink" title="3.java配置类相关注解"></a>3.java配置类相关注解</h4><p><code>@Configuration</code> 声明当前类为配置类，相当于xml形式的Spring配置（类上）</p>
+<p><code>@Bean</code> 注解在方法上，声明当前方法的返回值为一个bean，替代xml中的方式（方法上）</p>
+<p><code>@Configuration</code> 声明当前类为配置类，其中内部组合了@Component注解，表明这个类是一个bean（类上）</p>
+<p><code>@ComponentScan</code> 用于对Component进行扫描，相当于xml中的（类上）</p>
+<p><code>@WishlyConfiguration</code> 为<code>@Configuration</code>与<code>@ComponentScan</code>的组合注解，可以替代这两个注解</p>
+<h4 id="4-切面（AOP）相关注解"><a href="#4-切面（AOP）相关注解" class="headerlink" title="4.切面（AOP）相关注解"></a>4.切面（AOP）相关注解</h4><p>Spring支持AspectJ的注解式切面编程。</p>
+<p><code>@Aspect</code> 声明一个切面（类上）<br>使用<code>@After</code>、<code>@Before</code>、<code>@Around</code>定义建言（advice），可直接将拦截规则（切点）作为参数。</p>
+<p><code>@After</code> 在方法执行之后执行（方法上）<br><code>@Before</code>在方法执行之前执行（方法上）<br><code>@Around</code> 在方法执行之前与之后执行（方法上）</p>
+<p><code>@PointCut</code> 声明切点<br>在java配置类中使用<code>@EnableAspectJAutoProxy</code>注解开启Spring对AspectJ代理的支持（类上）</p>
+<h4 id="5-Bean的属性支持"><a href="#5-Bean的属性支持" class="headerlink" title="5.@Bean的属性支持"></a>5.@Bean的属性支持</h4><p><code>@Scope</code> 设置Spring容器如何新建Bean实例（方法上，得有@Bean）<br>其设置类型包括：</p>
+<p>Singleton （单例,一个Spring容器中只有一个bean实例，默认模式）,<br>Protetype （每次调用新建一个bean）,<br>Request （web项目中，给每个http request新建一个bean）,<br>Session （web项目中，给每个http session新建一个bean）,<br>GlobalSession（给每一个 global http session新建一个Bean实例）</p>
+<p><code>@StepScope</code> 在Spring Batch中还有涉及</p>
+<p><code>@PostConstruct</code> 由JSR-250提供，在构造函数执行完之后执行，等价于xml配置文件中bean的initMethod</p>
+<p><code>@PreDestory</code> 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod</p>
+<h4 id="6-Value注解"><a href="#6-Value注解" class="headerlink" title="6.@Value注解"></a>6.@Value注解</h4><p><code>@Value</code> 为属性注入值（属性上）<br>支持如下方式的注入：<br>》注入普通字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;Michael Jackson&quot;)String name;</span><br></pre></td></tr></table></figure></p>
+<p>》注入操作系统属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;#&#123;systemProperties[&apos;os.name&apos;]&#125;&quot;)String osName;</span><br></pre></td></tr></table></figure></p>
+<p>》注入表达式结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;#&#123; T(java.lang.Math).random() * 100 &#125;&quot;) String randomNumber;</span><br></pre></td></tr></table></figure></p>
+<p>》注入其它bean属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;#&#123;domeClass.name&#125;&quot;)String name;</span><br></pre></td></tr></table></figure></p>
+<p>》注入文件资源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;classpath:com/hgs/hello/test.txt&quot;)String Resource file;</span><br></pre></td></tr></table></figure></p>
+<p>》注入网站资源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;http://www.cznovel.com&quot;)Resource url;</span><br></pre></td></tr></table></figure></p>
+<p>》注入配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Value(&quot;$&#123;book.name&#125;&quot;)String bookName;</span><br></pre></td></tr></table></figure></p>
+<p>注入配置使用方法：<br>① 编写配置文件（test.properties）</p>
+<p>book.name=《三体》</p>
+<p>② <code>@PropertySource</code> 加载配置文件(类上)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@PropertySource(&quot;classpath:com/hgs/hello/test/test.propertie&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>③ 还需配置一个PropertySourcesPlaceholderConfigurer的bean。</p>
+<h4 id="7-环境切换"><a href="#7-环境切换" class="headerlink" title="7.环境切换"></a>7.环境切换</h4><p><code>@Profile</code> 通过设定Environment的ActiveProfiles来设定当前context需要使用的配置环境。（类或方法上）</p>
+<p>@Conditional Spring4中可以使用此注解定义条件话的bean，通过实现Condition接口，并重写matches方法，从而决定该bean是否被实例化。（方法上）</p>
+<p>####8.异步相关</p>
+<p><code>@EnableAsync</code> 配置类中，通过此注解开启对异步任务的支持，叙事性AsyncConfigurer接口（类上）</p>
+<p><code>@Async</code> 在实际执行的bean方法使用该注解来申明其是一个异步任务（方法上或类上所有的方法都将异步，需要<code>@EnableAsync</code>开启异步任务）</p>
+<h4 id="9-定时任务相关"><a href="#9-定时任务相关" class="headerlink" title="9.定时任务相关"></a>9.定时任务相关</h4><p><code>@EnableScheduling</code> 在配置类上使用，开启计划任务的支持（类上）</p>
+<p><code>@Scheduled</code> 来申明这是一个任务，包括cron,fixDelay,fixRate等类型（方法上，需先开启计划任务的支持）</p>
+<h4 id="10-Enable-注解说明"><a href="#10-Enable-注解说明" class="headerlink" title="10.@Enable*注解说明"></a>10.@Enable*注解说明</h4><p>这些注解主要用来开启对xxx的支持。<br><code>@EnableAspectJAutoProxy</code> 开启对AspectJ自动代理的支持</p>
+<p><code>@EnableAsync</code> 开启异步方法的支持</p>
+<p><code>@EnableScheduling</code> 开启计划任务的支持</p>
+<p><code>@EnableWebMvc</code> 开启Web MVC的配置支持</p>
+<p><code>@EnableConfigurationProperties</code> 开启对<code>@ConfigurationProperties</code>注解配置Bean的支持</p>
+<p><code>@EnableJpaRepositories</code> 开启对SpringData JPA Repository的支持</p>
+<p><code>@EnableTransactionManagement</code> 开启注解式事务的支持</p>
+<p><code>@EnableTransactionManagement</code> 开启注解式事务的支持</p>
+<p><code>@EnableCaching</code> 开启注解式的缓存支持</p>
+<h4 id="11-测试相关注解"><a href="#11-测试相关注解" class="headerlink" title="11.测试相关注解"></a>11.测试相关注解</h4><p><code>@RunWith</code> 运行器，Spring中通常用于对JUnit的支持</p>
+<p><code>@RunWith(SpringJUnit4ClassRunner.class)</code></p>
+<p><code>@ContextConfiguration</code> 用来加载配置ApplicationContext，其中classes属性用来加载配置类</p>
+<p><code>@ContextConfiguration(classes={TestConfig.class})</code></p>
+<h2 id="SpringMVC部分"><a href="#SpringMVC部分" class="headerlink" title="SpringMVC部分"></a>SpringMVC部分</h2><p><code>@EnableWebMvc</code> 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。</p>
+<p><code>@Controller</code> 声明该类为SpringMVC中的Controller</p>
+<p><code>@RequestMapping</code> 用于映射Web请求，包括访问路径和参数（类或方法上）</p>
+<p><code>@ResponseBody</code> 支持将返回值放在response内，而不是一个页面，通常用户返回json数据（返回值旁或方法上）</p>
+<p><code>@RequestBody</code> 允许request的参数在request体中，而不是在直接连接在地址后面。（放在参数前）</p>
+<p><code>@PathVariable</code> 用于接收路径参数，比如<code>@RequestMapping(“/hello/{name}”)</code>申明的路径，将注解放在参数中前，即可获取该值，通常作为Restful的接口实现方法。</p>
+<p><code>@RestController</code> 该注解为一个组合注解，相当于<code>@Controller</code>和<code>@ResponseBody</code>的组合，注解在类上，意味着，该Controller的所有方法都默认加上了<code>@ResponseBody</code>。</p>
+<p><code>@ControllerAdvice</code> 通过该注解，我们可以将对于控制器的全局配置放置在同一个位置，注解了<code>@Controller</code>的类的方法可使用<code>@ExceptionHandler</code>、<code>@InitBinder</code>、<code>@ModelAttribute</code>注解到方法上，<br>这对所有注解了 <code>@RequestMapping</code>的控制器内的方法有效。</p>
+<p><code>@ExceptionHandler</code> 用于全局处理控制器里的异常</p>
+<p><code>@InitBinder</code> 用来设置WebDataBinder，WebDataBinder用来自动绑定前台请求参数到Model中。</p>
+<p><code>@ModelAttribute</code> 本来的作用是绑定键值对到Model里，在<code>@ControllerAdvice</code>中是让全局的<code>@RequestMapping</code>都能获得在此处设置的键值对。</p>
 
       
     </div>
@@ -281,13 +322,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/02/01/ssh内网穿透设置/">ssh内网穿透,ssh隧道代理上网</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/15/Spring常用注解（收藏大全）/">Spring常用注解（收藏大全）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">贱不死的小强</a></p>
-        <p><span>发布时间:</span>2018-02-01, 18:25:36</p>
-        <p><span>最后更新:</span>2018-02-01, 18:01:51</p>
+        <p><span>发布时间:</span>2018-08-15, 17:41:06</p>
+        <p><span>最后更新:</span>2018-08-17, 14:21:26</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/02/01/ssh内网穿透设置/" title="ssh内网穿透,ssh隧道代理上网">http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/15/Spring常用注解（收藏大全）/" title="Spring常用注解（收藏大全）">http://blog.icodebug.com/2018/08/15/Spring常用注解（收藏大全）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2018/08/15/Spring常用注解（收藏大全）/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -300,16 +341,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/02/04/Docker-non-root-access-Error-loading-config-file-stat-home-icodebug-docker-config-json-1/">
-                    Docker non-root access: Error loading config file:stat /home/icodebug/.docker/config.json
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/10/25/阿里巴巴Java开发规约插件使用/">
-                    阿里巴巴Java开发规约插件使用
+                <a href="/2018/02/04/Docker-non-root-access-Error-loading-config-file-stat-home-icodebug-docker-config-json-1/">
+                    Docker non-root access: Error loading config file:stat /home/icodebug/.docker/config.json
                 </a>
             </div>
         
@@ -320,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#废话连篇代码讲解："><span class="toc-number">1.</span> <span class="toc-text">废话连篇代码讲解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正儿八经的实验"><span class="toc-number">2.</span> <span class="toc-text">正儿八经的实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内网穿透-域名映射"><span class="toc-number">3.</span> <span class="toc-text">内网穿透 域名映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh隧道代理上网"><span class="toc-number">4.</span> <span class="toc-text">ssh隧道代理上网</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring部分"><span class="toc-number">1.</span> <span class="toc-text">Spring部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-声明bean的注解"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.声明bean的注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-注入bean的注解"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.注入bean的注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-java配置类相关注解"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.java配置类相关注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-切面（AOP）相关注解"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.切面（AOP）相关注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Bean的属性支持"><span class="toc-number">1.0.5.</span> <span class="toc-text">5.@Bean的属性支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Value注解"><span class="toc-number">1.0.6.</span> <span class="toc-text">6.@Value注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-环境切换"><span class="toc-number">1.0.7.</span> <span class="toc-text">7.环境切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-定时任务相关"><span class="toc-number">1.0.8.</span> <span class="toc-text">9.定时任务相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-Enable-注解说明"><span class="toc-number">1.0.9.</span> <span class="toc-text">10.@Enable*注解说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-测试相关注解"><span class="toc-number">1.0.10.</span> <span class="toc-text">11.测试相关注解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringMVC部分"><span class="toc-number">2.</span> <span class="toc-text">SpringMVC部分</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -382,7 +417,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2018/02/01/ssh内网穿透设置/" data-title="ssh内网穿透,ssh隧道代理上网" data-url="http://blog.icodebug.com/2018/02/01/ssh内网穿透设置/"></div>
+    <div class="ds-thread" data-thread-key="2018/08/15/Spring常用注解（收藏大全）/" data-title="Spring常用注解（收藏大全）" data-url="http://blog.icodebug.com/2018/08/15/Spring常用注解（收藏大全）/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -406,15 +441,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/02/04/Docker-non-root-access-Error-loading-config-file-stat-home-icodebug-docker-config-json-1/" title="上一篇: Docker non-root access: Error loading config file:stat /home/icodebug/.docker/config.json">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/10/25/阿里巴巴Java开发规约插件使用/" title="下一篇: 阿里巴巴Java开发规约插件使用">
+            <a href="/2018/02/04/Docker-non-root-access-Error-loading-config-file-stat-home-icodebug-docker-config-json-1/" title="下一篇: Docker non-root access: Error loading config file:stat /home/icodebug/.docker/config.json">
                 <i class="fa fa-angle-right"></i>
             </a>
         
