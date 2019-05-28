@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.icodebug.com/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/index.html">
 <meta property="og:site_name" content="icodebug">
 <meta property="og:description" content="ubuntu16.04使用docker运行elasticsearch6.8.0">
-<meta property="og:updated_time" content="2019-05-28T07:17:36.517Z">
+<meta property="og:updated_time" content="2019-05-28T09:13:52.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker安装 elasticsearch 报错max virtual memory areas vm.max_map_count [65530] is too low">
 <meta name="twitter:description" content="ubuntu16.04使用docker运行elasticsearch6.8.0">
@@ -264,6 +264,22 @@
 <p>安装 ik分词插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker exec -i -t 容器id /bin/bash</span><br><span class="line"></span><br><span class="line">./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.0/elasticsearch-analysis-ik-6.8.0.zip</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">docker restart myes</span><br></pre></td></tr></table></figure></p>
 <p>安装 head 插件</p>
 <p><a href="https://chrome.google.com/webstore/search/ElasticSearch%20Head?utm_source=chrome-ntp-icon" target="_blank" rel="external">https://chrome.google.com/webstore/search/ElasticSearch%20Head?utm_source=chrome-ntp-icon</a></p>
+<p>创建索引：<code>curl -XPUT http://118.190.87.198:9200/index2</code></p>
+<p>增加测试数据：<br><code>curl -X POST http://118.190.87.198:9200/index/xw/1 -H &#39;Content-Type:application/json&#39; -d &#39;{&quot;content&quot;:&quot;美国留给伊拉克的是个烂摊子吗&quot;}&#39;</code></p>
+<p><code>curl -X POST http://118.190.87.198:9200/index/xw/2 -H &#39;Content-Type:application/json&#39; -d &#39;{&quot;content&quot;:&quot;公安部：各地校车将享最高路权&quot;}&#39;</code></p>
+<p><code>curl -X POST http://118.190.87.198:9200/index/xw/3 -H &#39;Content-Type:application/json&#39; -d &#39;{&quot;content&quot;:&quot;中韩渔警冲突调查：韩警平均每天扣1艘中国渔船&quot;}&#39;</code></p>
+<p><code>curl -X POST http://118.190.87.198:9200/index/xw/4 -H &#39;Content-Type:application/json&#39; -d &#39;{&quot;content&quot;:&quot;中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首&quot;}&#39;</code></p>
+<p><code>curl -X POST http://118.190.87.198:9200/index/xw/5 -H &#39;Content-Type:application/json&#39; -d &#39;{&quot;content&quot;:&quot;作为一个发展中的国家还是要好好努力的&quot;}&#39;</code></p>
+<p>head插件的复合：<br><code>{
+    &quot;query&quot; : { &quot;match&quot; : { &quot;content&quot; : &quot;中国&quot; }},
+    &quot;highlight&quot; : {
+        &quot;pre_tags&quot; : [&quot;&lt;tag1&gt;&quot;, &quot;&lt;tag2&gt;&quot;],
+        &quot;post_tags&quot; : [&quot;&lt;/tag1&gt;&quot;, &quot;&lt;/tag2&gt;&quot;],
+        &quot;fields&quot; : {
+            &quot;content&quot; : {}
+        }
+    }
+}</code></p>
 
       
     </div>
@@ -275,7 +291,7 @@
         <p><span>本文标题:</span><a href="/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/">Docker安装 elasticsearch 报错max virtual memory areas vm.max_map_count [65530] is too low</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">贱不死的小强</a></p>
         <p><span>发布时间:</span>2019-05-27, 10:27:25</p>
-        <p><span>最后更新:</span>2019-05-28, 15:17:36</p>
+        <p><span>最后更新:</span>2019-05-28, 17:13:52</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/" title="Docker安装 elasticsearch 报错max virtual memory areas vm.max_map_count [65530] is too low">http://blog.icodebug.com/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
