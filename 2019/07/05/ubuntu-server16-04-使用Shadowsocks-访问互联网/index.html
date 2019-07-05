@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ubuntu15 安装 最新版pyqt | icodebug</title>
+  <title>ubuntu server16.04 使用Shadowsocks 访问互联网 | icodebug</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对python写gui感兴趣自学一下
-安装python写界面工具pyqt">
+  <meta name="description" content="数据采集的网站需要科学上网，所以需要在服务器上面做代理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu15 安装 最新版pyqt">
-<meta property="og:url" content="http://blog.icodebug.com/2016/04/01/ubuntu-安装-最新版pyqt/index.html">
+<meta property="og:title" content="ubuntu server16.04 使用Shadowsocks 访问互联网">
+<meta property="og:url" content="http://blog.icodebug.com/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/index.html">
 <meta property="og:site_name" content="icodebug">
-<meta property="og:description" content="对python写gui感兴趣自学一下
-安装python写界面工具pyqt">
-<meta property="og:updated_time" content="2016-04-04T02:07:32.784Z">
+<meta property="og:description" content="数据采集的网站需要科学上网，所以需要在服务器上面做代理">
+<meta property="og:updated_time" content="2019-07-05T03:18:02.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu15 安装 最新版pyqt">
-<meta name="twitter:description" content="对python写gui感兴趣自学一下
-安装python写界面工具pyqt">
+<meta name="twitter:title" content="ubuntu server16.04 使用Shadowsocks 访问互联网">
+<meta name="twitter:description" content="数据采集的网站需要科学上网，所以需要在服务器上面做代理">
   
   
     <link rel="icon" href="/favicon.png">
@@ -212,11 +209,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ubuntu-安装-最新版pyqt" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ubuntu-server16-04-使用Shadowsocks-访问互联网" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/01/ubuntu-安装-最新版pyqt/" class="article-date">
-      <time datetime="2016-04-01T09:44:01.000Z" itemprop="datePublished">2016-04-01</time>
+      <a href="/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/" class="article-date">
+      <time datetime="2019-07-05T03:02:36.000Z" itemprop="datePublished">2019-07-05</time>
 </a>
     </div>
   
@@ -229,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu15 安装 最新版pyqt
+      ubuntu server16.04 使用Shadowsocks 访问互联网
     </h1>
   
 
@@ -240,7 +237,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qt/">qt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -252,22 +249,26 @@
           
         <p><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
 <ul>
-<li>对python写gui感兴趣自学一下</li>
-<li>安装python写界面工具pyqt</li>
+<li></li>
+<li>数据采集的网站需要科学上网，所以需要在服务器上面做代理</li>
 <li><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
-去网址<code>http://download.qt.io/official_releases/qt/</code>找最新版本的pyqt<br>我找到的最新版本：<a href="http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run" target="_blank" rel="external">http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run</a></the></li>
+</the></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run</span><br><span class="line"></span><br><span class="line">chmod +x qt-opensource-linux-x64-5.6.0.run</span><br><span class="line"></span><br><span class="line">./qt-opensource-linux-x64-5.6.0.run</span><br></pre></td></tr></table></figure>
-<p>弹出安装界面，填写注册信息和安装位置完成安装</p>
-<p>设置qt的路径？环境变量  你安装qt的目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/home/userXXX/Qt/Qt5.5/gcc_64/bin</span><br></pre></td></tr></table></figure></p>
-<p>安装OpenGL的支持<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libgl1-mesa-dev</span><br></pre></td></tr></table></figure></p>
-<p>安装sip，去<a href="http://www.riverbankcomputing.com寻找最新版sip下载地址" target="_blank" rel="external">http://www.riverbankcomputing.com寻找最新版sip下载地址</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://sourceforge.net/projects/pyqt/files/sip/sip-4.17/sip-4.17.tar.gz</span><br><span class="line">tar -zvxf sip-4.17.tar.gz</span><br><span class="line"><span class="built_in">cd</span> sip-4.17</span><br><span class="line">python3 configure.py</span><br><span class="line">make</span><br></pre></td></tr></table></figure></p>
-<p>这里报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">siplib.c:20:20: fatal error: Python.h: 没有那个文件或目录</span><br></pre></td></tr></table></figure></p>
-<p>解决方法是安装python-dev，这是Python的头文件和静态库包:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3-dev</span><br></pre></td></tr></table></figure></p>
-<p>重新编译：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></p>
-<p>安装pyqt 去<a href="http://www.riverbankcomputing.com寻找最新版pyqt下载地址" target="_blank" rel="external">http://www.riverbankcomputing.com寻找最新版pyqt下载地址</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.5.1/PyQt-gpl-5.5.1.tar.gz</span><br><span class="line">tar -zvxf PyQt-gpl-5.5.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> PyQt-gpl-5.5.1</span><br><span class="line">python3 configure.py</span><br></pre></td></tr></table></figure></p>
-<p>这里报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">qmake: could not <span class="built_in">exec</span> <span class="string">'/usr/lib/x86_64-linux-gnu/qt4/bin/qmake'</span>: No such file or directory</span><br><span class="line">Error: PyQt5 requires Qt v5.0 or later. You seem to be using v3. Use the</span><br><span class="line">--qmake flag to specify the correct version of qmake.</span><br></pre></td></tr></table></figure></p>
-<p>解决方法在你qt安装目录搜索：qmake的路径然后重新python configure.py<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 configure.py --qmake /home/xq/apps/python/qt5.6/5.6/gcc_64/bin/qmake</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure></p>
+<h2 id="Shadowsocks安装"><a href="#Shadowsocks安装" class="headerlink" title="Shadowsocks安装"></a>Shadowsocks安装</h2><p>由于是 server ，所以在这里我只介绍命令行的安装。</p>
+<p>shadowsocks 运行的时候通过 python ，所以需要先安装 python</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install pyton</span><br></pre></td></tr></table></figure>
+<p>接着安装 python 的包管理器 pip<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-pip</span><br></pre></td></tr></table></figure></p>
+<p>之后我们通过 pip 直接安装 shadowsocks<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install shadowsocks</span><br></pre></td></tr></table></figure></p>
+<p><strong>配置Shadowsocks</strong><br>在任意地方新建一个配置文件shadowsocks.json（在这里我放在/home/ss1.json中），然后配置相关参数<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"server"</span>: <span class="string">"&#123;your-server&#125;"</span>,</span><br><span class="line">  <span class="attr">"server_port"</span>: <span class="number">12345</span>,</span><br><span class="line">  <span class="attr">"local_port"</span>: <span class="number">1080</span>,</span><br><span class="line">  <span class="attr">"password"</span>: <span class="string">"&#123;your-password&#125;"</span>,</span><br><span class="line">  <span class="attr">"timeout"</span>: <span class="number">600</span>,</span><br><span class="line">  <span class="attr">"method"</span>: <span class="string">"aes-256-cfb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意替换配置中的相关节点信息</strong><br><strong>注意替换配置中的相关节点信息</strong><br><strong>注意替换配置中的相关节点信息</strong></p>
+<p><strong>启动shadowsocks服务</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslocal -c /home/ss1.json <span class="_">-d</span> start</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置终端代理-polipo"><a href="#配置终端代理-polipo" class="headerlink" title="配置终端代理 polipo"></a>配置终端代理 polipo</h2><p><strong>安装</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install polipo</span><br></pre></td></tr></table></figure></p>
+<p><strong>修改配置（一般不要变动，直接复制上去即可）：sudo vi /etc/polipo/config</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># This file only needs to list configuration variables that deviate  </span><br><span class="line"># from the default values.  See /usr/share/doc/polipo/examples/config.sample  </span><br><span class="line"># and &quot;polipo -v&quot; for variables you can tweak and further information.  </span><br><span class="line">  </span><br><span class="line">logSyslog = true  </span><br><span class="line">logFile = /var/log/polipo/polipo.log  </span><br><span class="line">  </span><br><span class="line">proxyAddress = &quot;0.0.0.0&quot;  </span><br><span class="line">  </span><br><span class="line">socksParentProxy = &quot;127.0.0.1:1080&quot;  </span><br><span class="line">socksProxyType = socks5  </span><br><span class="line">  </span><br><span class="line">chunkHighMark = 50331648  </span><br><span class="line">objectHighMark = 16384  </span><br><span class="line">  </span><br><span class="line">serverMaxSlots = 64  </span><br><span class="line">serverSlots = 16  </span><br><span class="line">serverSlots1 = 32</span><br></pre></td></tr></table></figure></p>
+<p><strong>重启</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service polipo restart</span><br></pre></td></tr></table></figure></p>
+<p><strong>获取自己当前ip：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl ip.gs</span><br></pre></td></tr></table></figure></p>
+<p><strong>获取当前代理的ip：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=http://127.0.0.1:8123 curl ip.gs</span><br></pre></td></tr></table></figure></p>
+<p><strong>开始使用代理：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:8123</span><br></pre></td></tr></table></figure></p>
+<p><strong>取消代理：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unset http_proxy</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -276,13 +277,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/01/ubuntu-安装-最新版pyqt/">ubuntu15 安装 最新版pyqt</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/">ubuntu server16.04 使用Shadowsocks 访问互联网</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">贱不死的小强</a></p>
-        <p><span>发布时间:</span>2016-04-01, 17:44:01</p>
-        <p><span>最后更新:</span>2016-04-04, 10:07:32</p>
+        <p><span>发布时间:</span>2019-07-05, 11:02:36</p>
+        <p><span>最后更新:</span>2019-07-05, 11:18:02</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/01/ubuntu-安装-最新版pyqt/" title="ubuntu15 安装 最新版pyqt">http://blog.icodebug.com/2016/04/01/ubuntu-安装-最新版pyqt/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2016/04/01/ubuntu-安装-最新版pyqt/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/" title="ubuntu server16.04 使用Shadowsocks 访问互联网">http://blog.icodebug.com/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -295,16 +296,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/09/12/idea-启动springBoot项目异常：Disconnected-from-the-target-VM-address-127-0-0-1-34364-transport-socket/">
-                    idea 启动springBoot项目异常：Disconnected from the target VM, address: &#39;127.0.0.1:34364&#39;, transport: &#39;socket&#39;
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/01/ubuntu-安装-python3-5/">
-                    ubuntu 安装 python3.5
+                <a href="/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/">
+                    Docker安装 elasticsearch 报错max virtual memory areas vm.max_map_count [65530] is too low
                 </a>
             </div>
         
@@ -315,7 +310,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Shadowsocks安装"><span class="toc-number">1.</span> <span class="toc-text">Shadowsocks安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置终端代理-polipo"><span class="toc-number">2.</span> <span class="toc-text">配置终端代理 polipo</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -377,7 +372,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/01/ubuntu-安装-最新版pyqt/" data-title="ubuntu15 安装 最新版pyqt" data-url="http://blog.icodebug.com/2016/04/01/ubuntu-安装-最新版pyqt/"></div>
+    <div class="ds-thread" data-thread-key="2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/" data-title="ubuntu server16.04 使用Shadowsocks 访问互联网" data-url="http://blog.icodebug.com/2019/07/05/ubuntu-server16-04-使用Shadowsocks-访问互联网/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -401,15 +396,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/12/idea-启动springBoot项目异常：Disconnected-from-the-target-VM-address-127-0-0-1-34364-transport-socket/" title="上一篇: idea 启动springBoot项目异常：Disconnected from the target VM, address: &#39;127.0.0.1:34364&#39;, transport: &#39;socket&#39;">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/01/ubuntu-安装-python3-5/" title="下一篇: ubuntu 安装 python3.5">
+            <a href="/2019/05/27/Docker安装-elasticsearch-报错max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/" title="下一篇: Docker安装 elasticsearch 报错max virtual memory areas vm.max_map_count [65530] is too low">
                 <i class="fa fa-angle-right"></i>
             </a>
         

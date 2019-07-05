@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.icodebug.com/2019/07/05/ubuntu-server16-04-%E4%BD%BF%E7%94%A8Shadowsocks-%E8%AE%BF%E9%97%AE%E4%BA%92%E8%81%94%E7%BD%91/</loc>
+    
+    <lastmod>2019-07-05T03:18:02.354Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.icodebug.com/2019/05/27/Docker%E5%AE%89%E8%A3%85-elasticsearch-%E6%8A%A5%E9%94%99max-virtual-memory-areas-vm-max-map-count-65530-is-too-low/</loc>
     
-    <lastmod>2019-05-28T09:13:52.480Z</lastmod>
+    <lastmod>2019-06-04T11:14:08.063Z</lastmod>
     
   </url>
   
