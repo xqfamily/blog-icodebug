@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ubuntu 安装 python3.5 | icodebug</title>
+  <title>动态切换ssr科学上网节点实现可靠代理ip爬取数据 | icodebug</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu 自带python2.7版本 
-安装python3.5版本">
+  <meta name="description" content="利用大量ssr科学上网节点实现动态切换节点，达到动态代理爬取数据的目的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu 安装 python3.5">
-<meta property="og:url" content="http://blog.icodebug.com/2016/04/01/ubuntu-安装-python3-5/index.html">
+<meta property="og:title" content="动态切换ssr科学上网节点实现可靠代理ip爬取数据">
+<meta property="og:url" content="http://blog.icodebug.com/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/index.html">
 <meta property="og:site_name" content="icodebug">
-<meta property="og:description" content="ubuntu 自带python2.7版本 
-安装python3.5版本">
-<meta property="og:updated_time" content="2016-04-01T08:53:13.381Z">
+<meta property="og:description" content="利用大量ssr科学上网节点实现动态切换节点，达到动态代理爬取数据的目的">
+<meta property="og:updated_time" content="2019-07-07T09:49:52.556Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu 安装 python3.5">
-<meta name="twitter:description" content="ubuntu 自带python2.7版本 
-安装python3.5版本">
+<meta name="twitter:title" content="动态切换ssr科学上网节点实现可靠代理ip爬取数据">
+<meta name="twitter:description" content="利用大量ssr科学上网节点实现动态切换节点，达到动态代理爬取数据的目的">
   
   
     <link rel="icon" href="/favicon.png">
@@ -212,11 +209,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ubuntu-安装-python3-5" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-动态切换ssr科学上网节点实现可靠代理ip爬取数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/01/ubuntu-安装-python3-5/" class="article-date">
-      <time datetime="2016-04-01T08:50:16.000Z" itemprop="datePublished">2016-04-01</time>
+      <a href="/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/" class="article-date">
+      <time datetime="2019-07-07T09:25:18.000Z" itemprop="datePublished">2019-07-07</time>
 </a>
     </div>
   
@@ -229,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu 安装 python3.5
+      动态切换ssr科学上网节点实现可靠代理ip爬取数据
     </h1>
   
 
@@ -248,13 +245,15 @@
           
         <p><excerpt in="" index="" |="" 首页摘要=""> </excerpt></p>
 <ul>
-<li>ubuntu 自带python2.7版本 </li>
-<li>安装python3.5版本</li>
-<li><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
-添加源<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:fkrull/deadsnakes</span><br><span class="line">sudo apt-get install python3</span><br></pre></td></tr></table></figure>
-</the></li>
+<li>利用大量ssr科学上网节点实现动态切换节点，达到动态代理爬取数据的目的<br><the rest="" of="" contents="" |="" 余下全文=""><a id="more"></a>
+<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2>最近在搞某网站数据，搜刮一些数据后就会弹出滑动验证码进行验证！换ip是最方便的解决方案，但是苦于囊中羞涩买不起高质量的高匿ip，也买不起adsl动态ip服务器。某天蹲坑突然想起，自己购买了大量的ssr科学上网节点呀，是否可以利用下！<h2 id="安装配置shadowsocks"><a href="#安装配置shadowsocks" class="headerlink" title="安装配置shadowsocks"></a>安装配置shadowsocks</h2>命令行ssr客户端安装：<a href="http://blog.icodebug.com/2019/04/10/ubuntu-shadowsocks-polipo%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/">点这儿看安装过程</a><br>这玩意安装完程序无法使用呀，因为他是socket通讯方式，要把它变成http代理可以使用上面教程里面的<code>polipo</code> 也可以使用 <code>privoxy</code> <a href="http://blog.icodebug.com/2019/07/07/privoxy-%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">privoxy安装教程在这</a></the></li>
 </ul>
-<p>设置Python 3.5为默认的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm /usr/bin/python</span><br><span class="line">ln <span class="_">-s</span> /usr/bin/python3.5 /usr/bin/python</span><br></pre></td></tr></table></figure></p>
+<p>完整的运行环境已经搞成了个docker地址是这个：<code>registry.cn-beijing.aliyuncs.com/icodebug/java8-python-ssr-privoxy:1.0</code></p>
+<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><p>最后面有完整的demo代码链接</p>
+<p><strong>初始化节点</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseInitalizer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> List&lt;Shadowsocks&gt; ssrs = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BaseInitalizer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"BaseInitalizer初始化信息！！！！！"</span>);</span><br><span class="line">        ShellUtil.setPrivoxyConfig();<span class="comment">//项目启动的时候需要配置下privoxy的配置文件增加个转发配置 forward-socks5t / 127.0.0.1:1080 .</span></span><br><span class="line">        ShellUtil.startPrivoxy();<span class="comment">//启动 privoxy 服务</span></span><br><span class="line">        initSsr();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 初始化ssr节点</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initSsr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (ssrs.size()&lt;<span class="number">1</span>)&#123;<span class="comment">/*todo 这里增加自己的ssr代理节点信息*/</span></span><br><span class="line">            ssrs.add(<span class="keyword">new</span> Shadowsocks(<span class="string">"xxx.xxx.com"</span>,<span class="string">"1111"</span>,<span class="string">"rc4-md5"</span>,<span class="string">"1111"</span>));</span><br><span class="line">            ssrs.add(<span class="keyword">new</span> Shadowsocks(<span class="string">"xxx.xxx.com"</span>,<span class="string">"1111"</span>,<span class="string">"rc4-md5"</span>,<span class="string">"1111"</span>));</span><br><span class="line">            ssrs.add(<span class="keyword">new</span> Shadowsocks(<span class="string">"xxx.xxx.com"</span>,<span class="string">"1111"</span>,<span class="string">"rc4-md5"</span>,<span class="string">"1111"</span>));</span><br><span class="line">            ssrs.add(<span class="keyword">new</span> Shadowsocks(<span class="string">"xxx.xxx.com"</span>,<span class="string">"1111"</span>,<span class="string">"rc4-md5"</span>,<span class="string">"1111"</span>));</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 随机获取一个ssr节点（因为封ip隔段时间会解封所以这里随机获取）</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title">getSsrBash</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (ssrs.size()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> ssrs.get(RandomUtils.nextInt(<span class="number">0</span>,ssrs.size()-<span class="number">1</span>)).getBash();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>切换ssr节点，干掉ssr节点，测试当前代理ip地址</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/ssr"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SsrController</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 测试当前的代理ip</span><br><span class="line">     * <span class="doctag">@param</span> port</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">test</span><span class="params">(Integer port)</span></span>&#123;</span><br><span class="line">        port = port==<span class="keyword">null</span>?<span class="number">8118</span>:port;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.getProperties().setProperty(<span class="string">"proxySet"</span>, <span class="string">"true"</span>);</span><br><span class="line">            Document document = Jsoup.connect(<span class="string">"https://ip.gs"</span>).proxy(ShellUtil.getLocalIp(),port).ignoreHttpErrors(<span class="keyword">true</span>).get();</span><br><span class="line">            String body = document.body().text();</span><br><span class="line">            <span class="keyword">return</span> ResponseEntity.ok(body);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 启动代理ip</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/start"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">start</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ShellUtil.sslocalStart();</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(<span class="string">"代理已启动"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/kill"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">kill</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ShellUtil.sslocalStop();</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(<span class="string">"干死了"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/xqfamily/ssr-proxy" target="_blank" rel="external">完整代码在这</a></p>
+<p>代码已经本地测试完工木有问题，需要注意的是代码使用前一定不要忘记自己添加些ssr节点。直接运行 build.sh 脚本自动把项目打包到docker里面启动项目。</p>
 
       
     </div>
@@ -263,13 +262,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/01/ubuntu-安装-python3-5/">ubuntu 安装 python3.5</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/">动态切换ssr科学上网节点实现可靠代理ip爬取数据</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">贱不死的小强</a></p>
-        <p><span>发布时间:</span>2016-04-01, 16:50:16</p>
-        <p><span>最后更新:</span>2016-04-01, 16:53:13</p>
+        <p><span>发布时间:</span>2019-07-07, 17:25:18</p>
+        <p><span>最后更新:</span>2019-07-07, 17:49:52</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/01/ubuntu-安装-python3-5/" title="ubuntu 安装 python3.5">http://blog.icodebug.com/2016/04/01/ubuntu-安装-python3-5/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2016/04/01/ubuntu-安装-python3-5/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/" title="动态切换ssr科学上网节点实现可靠代理ip爬取数据">http://blog.icodebug.com/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.icodebug.com/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/　　作者: 贱不死的小强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -282,16 +281,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/01/ubuntu-安装-最新版pyqt/">
-                    ubuntu15 安装 最新版pyqt
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/28/Java-8的新特性/">
-                    Java 8的新特性
+                <a href="/2019/07/07/privoxy-简单安装配置/">
+                    privoxy 简单安装配置
                 </a>
             </div>
         
@@ -302,7 +295,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缘由"><span class="toc-number">1.</span> <span class="toc-text">缘由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装配置shadowsocks"><span class="toc-number">2.</span> <span class="toc-text">安装配置shadowsocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上代码"><span class="toc-number">3.</span> <span class="toc-text">上代码</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -364,7 +357,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/01/ubuntu-安装-python3-5/" data-title="ubuntu 安装 python3.5" data-url="http://blog.icodebug.com/2016/04/01/ubuntu-安装-python3-5/"></div>
+    <div class="ds-thread" data-thread-key="2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/" data-title="动态切换ssr科学上网节点实现可靠代理ip爬取数据" data-url="http://blog.icodebug.com/2019/07/07/动态切换ssr科学上网节点实现可靠代理ip爬取数据/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -388,15 +381,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/01/ubuntu-安装-最新版pyqt/" title="上一篇: ubuntu15 安装 最新版pyqt">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/28/Java-8的新特性/" title="下一篇: Java 8的新特性">
+            <a href="/2019/07/07/privoxy-简单安装配置/" title="下一篇: privoxy 简单安装配置">
                 <i class="fa fa-angle-right"></i>
             </a>
         
